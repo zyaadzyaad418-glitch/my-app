@@ -1,4 +1,13 @@
-Demo Trading Dashboard — For learning only
+# Demo Trading Front-End (Static)
 
-This is a harmless demo showing a fake dashboard UI. It does not perform any trading or handle funds.
-Use this repo only to learn how to host and deploy a static site with GitHub Pages.
+واجهة تعليمية تفاعلية لصفحة تداول تجريبية تعمل بالكامل على GitHub Pages.
+**هذا مشروع تعليمي فقط — لا تداول حقيقي.**
+
+## تشغيل على GitHub Pages
+1. تأكد أن الملفات موجودة في جذر المستودع (`index.html`, `styles.css`, `script.js`).
+2. في إعدادات (Settings) → Pages: اختر `Branch: main` و `Folder: / (root)` ثم اضغط Save.
+3. انتظر 1–2 دقيقة ثم افتح رابط الموقع.
+
+## ملاحظات
+- كل البيانات مزيفة (محاكاة).
+- يمكنك تعديل `script.js` لتغيير البيانات أو إضافة مزايا.
