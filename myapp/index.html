@@ -3,49 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Demo Trading Dashboard — للتعلّم فقط</title>
+  <title>Demo Trading Platform — للتعلّم</title>
+
+  <!-- Chart.js من CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header>
-    <h1>لوحة تحكّم تجريبية (Demo)</h1>
-    <p class="note">هذه واجهة تجريبية للعرض فقط — لا يوجد تداول حقيقي. للتعلّم فقط.</p>
+<body dir="rtl">
+  <header class="topbar">
+    <div class="brand">DemoExchange</div>
+    <div class="balance">الرصيد: <span id="balance">1000.00</span> USDT</div>
   </header>
 
-  <main>
-    <section class="stats">
-      <div class="card">
-        <h3>المستخدمون</h3>
-        <p id="users">—</p>
+  <main class="container">
+    <section class="left">
+      <div class="chart-card card">
+        <div class="card-title">سعر BTC/USDT</div>
+        <canvas id="priceChart"></canvas>
+        <div class="ticker">السعر الحالي: <span id="lastPrice">—</span> USDT</div>
       </div>
-      <div class="card">
-        <h3>الودائع الكليّة (USDT)</h3>
-        <p id="deposits">—</p>
-      </div>
-      <div class="card">
-        <h3>الروبوتات النشطة</h3>
-        <p id="bots">—</p>
-      </div>
-      <div class="card">
-        <h3>أرباح اليوم (تقديري)</h3>
-        <p id="profit">—</p>
+
+      <div class="order-card card">
+        <div class="card-title">نفّذ أمر</div>
+        <div class="order-form">
+          <label>الكمية (BTC)<input id="qty" type="number" step="0.0001" value="0.001"></label>
+          <label>السعر (USDT)<input id="price" type="number" step="0.01" value="30000"></label>
+          <div class="buttons">
+            <button id="buyBtn" class="buy">شراء</button>
+            <button id="sellBtn" class="sell">بيع</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="feed">
-      <h2>سجل العمليات (توضيحي)</h2>
-      <ul id="feed"></ul>
-    </section>
+    <section class="right">
+      <div class="book-card card">
+        <div class="card-title">دفتر الأوامر</div>
+        <div class="orderbook">
+          <div class="asks">
+            <div class="sub-title">بيع (Asks)</div>
+            <ul id="asksList"></ul>
+          </div>
+          <div class="bids">
+            <div class="sub-title">شراء (Bids)</div>
+            <ul id="bidsList"></ul>
+          </div>
+        </div>
+      </div>
 
-    <section class="controls">
-      <button id="refresh">تحديث البيانات (توضيحي)</button>
+      <div class="trades-card card">
+        <div class="card-title">سجل التداول (توضيحي)</div>
+        <ul id="tradeFeed" class="feed"></ul>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <small>Demo — للتعلّم فقط. هذا الموقع لا ينفذ صفقات ولا يتعامل بأموال.</small>
+  <footer class="footer">
+    <small>Demo — للتعلّم فقط. لا تداول حقيقي.</small>
   </footer>
 
   <script src="script.js"></script>
 </body>
-</html
+</html>
