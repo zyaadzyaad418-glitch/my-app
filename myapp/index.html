@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demo Trading Dashboard — للتعلّم فقط</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>لوحة تحكّم تجريبية (Demo)</h1>
+    <p class="note">هذه واجهة تجريبية للعرض فقط — لا يوجد تداول حقيقي. للتعلّم فقط.</p>
+  </header>
+
+  <main>
+    <section class="stats">
+      <div class="card">
+        <h3>المستخدمون</h3>
+        <p id="users">—</p>
+      </div>
+      <div class="card">
+        <h3>الودائع الكليّة (USDT)</h3>
+        <p id="deposits">—</p>
+      </div>
+      <div class="card">
+        <h3>الروبوتات النشطة</h3>
+        <p id="bots">—</p>
+      </div>
+      <div class="card">
+        <h3>أرباح اليوم (تقديري)</h3>
+        <p id="profit">—</p>
+      </div>
+    </section>
+
+    <section class="feed">
+      <h2>سجل العمليات (توضيحي)</h2>
+      <ul id="feed"></ul>
+    </section>
+
+    <section class="controls">
+      <button id="refresh">تحديث البيانات (توضيحي)</button>
+    </section>
+  </main>
+
+  <footer>
+    <small>Demo — للتعلّم فقط. هذا الموقع لا ينفذ صفقات ولا يتعامل بأموال.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html
